@@ -1,0 +1,7 @@
+{
+  "name": "inspiration",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
