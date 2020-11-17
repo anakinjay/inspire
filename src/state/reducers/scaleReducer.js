@@ -151,6 +151,8 @@ const initialState = {
 
 
 }
+const newSongState = initialState;
+
 Promise.resolve(storage.getState()).then((e)=>{
 
     console.log(e);
@@ -225,6 +227,9 @@ function genTargets(state) {
 export default (state = initialState, { type, payload }) => {
 console.log(state);
     switch (type) {
+    case "NEWSONG":
+        return {...newSongState, key: state.key, name: state.name, scale: state.scale, page:"Edit Song" }
+
     case "GOTO":
         console.log("PAGE CHANGE", payload);
 

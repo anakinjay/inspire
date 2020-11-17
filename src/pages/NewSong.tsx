@@ -40,7 +40,7 @@ const NewSong: React.FC = (props: any) => {
               <IonSelectOption value="Minor">Minor</IonSelectOption>
                           </IonSelect>
           </IonItem>
-          <IonButton onClick={()=>{props.goto("Edit Song")}}   expand={"block"} color="primary">Start New Song</IonButton>
+          <IonButton onClick={()=>{props.newSong()}}   expand={"block"} color="primary">Start New Song</IonButton>
     </div>
   );
 };
@@ -49,6 +49,9 @@ const NewSong: React.FC = (props: any) => {
 const mapDispatchToProps = (dispatch: (arg0: any) => any) => {
   console.log("Dispatch Fired");
   return {
+    newSong: () =>{
+      dispatch({ type: 'NEWSONG' });
+    },
     // dispatching plain actions
     goto: (payload: any) => {
       
